@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     
-    //TODO Show Lives, Reduce Lives, Add Danger
+   /* //TODO Show Lives, Reduce Lives, Add Danger
     
     private int _score = 0;
     [SerializeField] private Text _scoreText;
@@ -22,5 +22,5 @@ public class UIManager : MonoBehaviour
     {
         _score += score;
         _scoreText.text = "Score: " + _score;
-    }
+    }*/
 }

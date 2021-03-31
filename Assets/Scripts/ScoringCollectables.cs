@@ -7,41 +7,26 @@ using UnityEngine.UI;
 
 public class ScoringCollectables : MonoBehaviour
 {
-
     /*
      * TODO: show Scores
-     * TODO: Position GoldCoins (
+     * TODO: Position GoldCoins
+     * TODO: Rotate Coins (90 degree) 
      */
     
-    private UIManager _uiManager;
+   // [SerializeField] private UIManager _uiManager;
+
+    private int _scoreCoin = 1;
     
     private void OnTriggerEnter(Collider other) {
-       
-
-       if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
        {
            if (this.CompareTag("Coin"))
            {
-               Debug.Log("This works");
+              // GameObject.FindWithTag("Player").GetComponent<Player>().RelayScore(1);
                Destroy(this.gameObject);
+               
            }
        }
-
-       else
-       {
-           Debug.Log("This works aswell");
-       }
-       /*   // if collected Coin, add 1 Point to Scores
-         if (this.CompareTag("Coin"))
-         {
-             _uiManager.AddScore(1);
-             Destroy(this.gameObject);
-         }
-         
-     }
-     // Collecting the Gold Coins
-     */
-        
-        
+       
     }
 }

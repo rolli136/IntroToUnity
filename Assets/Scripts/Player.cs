@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -11,6 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float _playerSpeed = 5f;
 
     [SerializeField] private float _bouncingSpeed = 7f;
+
+    [SerializeField] private SpawnManager _spawnManager;
+    
+    [SerializeField] private UIManager _uiManager;
 
     private Vector3 movement;
     
@@ -43,5 +48,10 @@ public class Player : MonoBehaviour
        );
        transform.Translate(playerTranslate);
     }
+
+   /* public void RelayScore(int score)
+    {
+        _uiManager.AddScore(score);
+    }*/
     
 }
