@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    //TODO Show Lives, Reduce Lives, Add Danger
+    
+    private int _score = 0;
+    [SerializeField] private Text _scoreText;
+
+
     void Start()
     {
-        
+        _scoreText.text = "Score: " + _score;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddScore(int score)
     {
-        
+        _score += score;
+        _scoreText.text = "Score: " + _score;
     }
 }

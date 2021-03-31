@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _playerSpeed = 5f;
 
-    [SerializeField] private float _bouncingSpeed = 15f;
+    [SerializeField] private float _bouncingSpeed = 7f;
 
     private Vector3 movement;
-    // Start is called before the first frame update
+    
+
+    private Vector3 playerTranslate;
     void Start()
     {
        
-        transform.position = new Vector3(0f, 0f, 0.5f);
+        transform.position = new Vector3(0f, -0.5f, 0.4f);
     }
 
     // Update is called once per frame
@@ -33,12 +36,12 @@ public class Player : MonoBehaviour
         float jumpInput = Input.GetAxis("Jump");
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        Vector3 playerTranslate = new Vector3(
+        playerTranslate = new Vector3(
            1f * horizontalInput * _playerSpeed * Time.deltaTime,
            1f * jumpInput * _bouncingSpeed * Time.deltaTime,
            0f
        );
        transform.Translate(playerTranslate);
-
     }
+    
 }
