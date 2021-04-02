@@ -28,7 +28,6 @@ public class SpawnManager : MonoBehaviour
    private void Start()
    {
       StartCoroutine(CoinSpawnSystem());
-      StartCoroutine(PowerUpSpawnSystem());
    }
 
    private void Update()
@@ -41,6 +40,9 @@ public class SpawnManager : MonoBehaviour
       _spawningOn = false;
    }
    
+   
+   // TODO randomise the Position if a coin is high or low 
+   // TODO PowerUp should appear at a random point
    IEnumerator CoinSpawnSystem()
    {
       //Could make the Coins flickering (Leuchtend?)
@@ -55,13 +57,18 @@ public class SpawnManager : MonoBehaviour
          {
             Instantiate(_coinPrefabs, new Vector3(nextPositionCoinX, -0.15f , 0.4f), Quaternion.Euler(90f, 0f, 0f), _coinParent.transform);
          }
-         else
+         else if ( 5 < _counter && _counter < 11)
          {
             Instantiate(_coinPrefabs, new Vector3(nextPositionCoinX, 1f , 0.4f), Quaternion.Euler(90f, 0f, 0f), _coinParent.transform);
          }
+         else if(_counter == 11 ) {
+            Instantiate(_powerUpSweetsPrefabs,
+               new Vector3(nextPositionCoinX, 1f , 0.4f), 
+               Quaternion.Euler(90f, 0f, 0f),  _powerUpParent.transform);
+         }
          _counter++;
 
-         if (_counter == 10)
+         if (_counter == 12)
          {
             _counter = 0;
          }
@@ -69,18 +76,11 @@ public class SpawnManager : MonoBehaviour
       }
    }
    
-   // TODO PowerUp should appear at a random point
-   // TODO should make you faster 
-   // TODO PowerUp should Rotate/ Blink
-   IEnumerator PowerUpSpawnSystem() {
-     while (_spawningOn) {
-         Instantiate(_powerUpSweetsPrefabs,
-            new Vector3(0f, 0f, 0f), 
-            Quaternion.Euler(90f, 0f, 0f),  _powerUpParent.transform); 
-         yield return null;
-   }
+   
+   
+   
+   
+   
 
-}
-   
-   
-}
+
+   }

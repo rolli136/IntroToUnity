@@ -7,14 +7,6 @@ using UnityEngine.UI;
 
 public class ScoringCollectables : MonoBehaviour
 {
-    /*
-     * TODO: show Scores
-     * TODO: Position GoldCoins
-     * TODO: Rotate Coins (90 degree) 
-     */
-    
-   // [SerializeField] private UIManager _uiManager;
-
     private int _scoreCoin = 1;
     
     private void OnTriggerEnter(Collider other) {

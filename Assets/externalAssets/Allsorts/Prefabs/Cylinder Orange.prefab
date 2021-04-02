@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 9500000}
   - component: {fileID: 5400000}
+  - component: {fileID: 7379831063984264965}
   m_Layer: 0
   m_Name: Cylinder Orange
   m_TagString: Untagged
@@ -195,3 +196,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7379831063984264965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b82291a3a894ab1a81242d36e78588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
