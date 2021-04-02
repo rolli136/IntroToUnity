@@ -23,11 +23,9 @@ public class Player : MonoBehaviour
     private Vector3 playerTranslate;
     void Start()
     {
-       
         transform.position = new Vector3(0f, -0.5f, 0.4f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerMovement();
@@ -49,9 +47,10 @@ public class Player : MonoBehaviour
        transform.Translate(playerTranslate);
     }
 
-   /* public void RelayScore(int score)
+    public void RelayScore(int score)
     {
         _uiManager.AddScore(score);
-    }*/
+    }
+    
     
 }

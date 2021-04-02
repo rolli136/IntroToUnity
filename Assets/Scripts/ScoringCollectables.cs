@@ -22,9 +22,8 @@ public class ScoringCollectables : MonoBehaviour
        {
            if (this.CompareTag("Coin"))
            {
-              // GameObject.FindWithTag("Player").GetComponent<Player>().RelayScore(1);
+               GameObject.FindWithTag("Player").GetComponent<Player>().RelayScore(1);
                Destroy(this.gameObject);
-               
            }
        }
        
