@@ -21,6 +21,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Player.cs" t="Include" />
+          <e p="PowerUps.cs" t="Include" />
           <e p="ScoringCollectables.cs" t="Include" />
           <e p="SpawnManager.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />

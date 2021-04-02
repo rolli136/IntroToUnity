@@ -7,20 +7,38 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+   [Header("Prefabs")]
    [SerializeField] private GameObject _coinPrefabs;
-
-   [SerializeField] private GameObject _coinParent; 
+   [SerializeField] private GameObject _powerUpSweetsPrefabs;
    
+
+   [Header("Parents")]
+   [SerializeField] private GameObject _coinParent;
+   [SerializeField] private GameObject _powerUpParent;
    private bool _spawningOn = true;
 
    private float _coinPositionX = 1f;
    private float _spaceBetweenCoins = 2.5f;
    private float nextPositionCoinX = 1f;
    private int _counter = 0; 
+   
+   // TODO Power Up erstellen, blinken
+   // TODO Gold -- Schatten loswerden
 
    private void Start()
    {
       StartCoroutine(CoinSpawnSystem());
+      StartCoroutine(PowerUpSpawnSystem());
+   }
+
+   private void Update()
+   {
+      // TODO Let PowerUp Rotate 
+   }
+
+   public void OnPlayerDeath()
+   {
+      _spawningOn = false;
    }
    
    IEnumerator CoinSpawnSystem()
@@ -51,5 +69,18 @@ public class SpawnManager : MonoBehaviour
       }
    }
    
+   // TODO PowerUp should appear at a random point
+   // TODO should make you faster 
+   // TODO PowerUp should Rotate/ Blink
+   IEnumerator PowerUpSpawnSystem() {
+     while (_spawningOn) {
+         Instantiate(_powerUpSweetsPrefabs,
+            new Vector3(0f, 0f, 0f), 
+            Quaternion.Euler(90f, 0f, 0f),  _powerUpParent.transform); 
+         yield return null;
+   }
 
+}
+   
+   
 }
