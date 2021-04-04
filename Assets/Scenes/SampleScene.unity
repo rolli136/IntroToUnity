@@ -266,6 +266,7 @@ MonoBehaviour:
   _bouncingSpeed: 7
   _spawnManager: {fileID: 734326420}
   _uiManager: {fileID: 1485212064}
+  _powerUpTimeout: 0
 --- !u!54 &633998538
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -501,7 +502,7 @@ GameObject:
   - component: {fileID: 957014755}
   - component: {fileID: 957014754}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -22,19 +22,14 @@ public class SpawnManager : MonoBehaviour
    private float nextPositionCoinX = 1f;
    private int _counter = 0; 
    
-   // TODO Power Up erstellen, blinken
-   // TODO Gold -- Schatten loswerden
-
    private void Start()
    {
       StartCoroutine(CoinSpawnSystem());
    }
-
-   private void Update()
-   {
-      // TODO Let PowerUp Rotate 
-   }
-
+   
+   
+   // TODO OnPlayerDeath
+   // TODO Damage Object
    public void OnPlayerDeath()
    {
       _spawningOn = false;
@@ -77,10 +72,5 @@ public class SpawnManager : MonoBehaviour
    }
    
    
-   
-   
-   
-   
-
 
    }
